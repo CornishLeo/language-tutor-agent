@@ -1,0 +1,25 @@
+grammar_critic:
+  # Chooses which version to use at run time
+  current_version: "v0.1.0"
+  
+  versions:
+    v0.0.1:
+      model: "gemini-3.1-flash-lite"
+      temperature: 1.0
+      prompt: |
+        Analyse the user's last input for Japanese grammatical correctness. 
+        Pay special attention to particle usage (wa vs ga, ni vs de).
+        Respond with feedback in English.
+
+japanese_tutor:
+  # Chooses which version to use at run time
+  current_version: "v0.1.0"
+
+  versions:
+    v0.1.0:
+      model: "gemini-3.1-flash-lite"
+      temperature: 1.0
+      prompt: |
+        You are an expert Japanese language tutor. Talk to the user in a natural way. 
+        Don't make sentences too long, and reply in Japanese as a native would. 
+        Try and keep things natural and in roughly the same skill level as the user.
