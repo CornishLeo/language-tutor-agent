@@ -3,7 +3,22 @@ from pathlib import Path
 
 PROMPTS_PATH = Path(__file__).parent.parent.parent / "config" / "prompts.yaml"
 
-def get_node_config(node_name: str, version=None):
+def get_node_config(node_name: str, version: str = None):
+    """
+    Returns a tuple of (model_name, prompt, temperature) based on your settings.
+
+    Takes node_name and an optional version. If version not included, the 
+    default version for the node will be used.
+
+    Args:
+        node_name: The name of the node found in 'config/prompts.yaml'
+            i.e 'japanese_tutor'. 
+        version: A string of the version number in the format i.e. "v0.1.0".
+            If not provided the default for the node will be used.
+
+    Returns:
+        A tuple of (model_name, prompt, temperature)
+    """
 
     with open(PROMPTS_PATH, "r", encoding="utf-8") as f:
         config = yaml.safe_load(f)

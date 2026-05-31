@@ -8,6 +8,10 @@ from src.agent.llm import get_llm, get_structured_llm
 from src.agent.config_loader import get_node_config
 
 def call_japanese_tutor(state: AgentState, runtime: Runtime[AgentContext] = None):
+    """
+    A LangGraph node for an llm which acts as a tutor and will respond in Japanese to
+    the users message.
+    """
 
     # Handle overriden config version at runtime.
     config_version = None # None will use the default version
@@ -38,6 +42,10 @@ def call_japanese_tutor(state: AgentState, runtime: Runtime[AgentContext] = None
     }
 
 def call_grammar_critic(state: AgentState, runtime: Runtime[AgentContext] = None):
+    """
+    A LangGraph node that acts as a critic for the users grammar in their message.
+    This node's llm returns a structured response.
+    """
 
     # Handle overriden config version at runtime.
     config_version = None # None will use the default version
