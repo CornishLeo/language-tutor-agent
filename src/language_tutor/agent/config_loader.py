@@ -1,7 +1,7 @@
 import yaml
 from pathlib import Path
 
-PROMPTS_PATH = Path(__file__).parent.parent.parent / "config" / "prompts.yaml"
+PROMPTS_PATH = Path(__file__).parent.parent.parent.parent / "config" / "prompts.yaml"
 
 
 def get_node_config(node_name: str, version: str = None):

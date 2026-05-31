@@ -1,6 +1,6 @@
 from prompt_toolkit import prompt
 
-from src.agent.graph import graph
+from language_tutor.agent.graph import graph
 
 
 def run_tutor_cli():

@@ -2,10 +2,10 @@ from langchain.messages import AIMessage, HumanMessage, SystemMessage
 from langgraph.types import Command
 from langgraph.runtime import Runtime
 
-from src.agent.schemas import GrammarCriticSchema
-from src.agent.state import AgentState, AgentContext
-from src.agent.llm import get_llm, get_structured_llm
-from src.agent.config_loader import get_node_config
+from language_tutor.agent.schemas import GrammarCriticSchema
+from language_tutor.agent.state import AgentState, AgentContext
+from language_tutor.agent.llm import get_llm, get_structured_llm
+from language_tutor.agent.config_loader import get_node_config
 
 
 def call_japanese_tutor(state: AgentState, runtime: Runtime[AgentContext] = None):
