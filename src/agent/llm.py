@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 def get_llm(model_name: str, temperature: float):
     """
     Returns a LangChain Google chat model interface.
@@ -25,7 +26,9 @@ def get_llm(model_name: str, temperature: float):
     """
     # Check API key exists
     if not os.environ.get("GOOGLE_API_KEY"):
-        raise ValueError("'GOOGLE_API_KEY' is missing from environment variables. Add it to a .env file.")
+        raise ValueError(
+            "'GOOGLE_API_KEY' is missing from environment variables. Add it to a .env file."
+        )
 
     return ChatGoogleGenerativeAI(
         model=model_name,
@@ -33,8 +36,9 @@ def get_llm(model_name: str, temperature: float):
         temperature=temperature,
         max_tokens=None,
         timeout=None,
-        max_retries=2
+        max_retries=2,
     )
+
 
 def get_structured_llm(model_name: str, schema: Type[BaseModel], temperature: float):
     """
@@ -46,7 +50,7 @@ def get_structured_llm(model_name: str, schema: Type[BaseModel], temperature: fl
 
     Args:
         model_name: The name of the llm e.g. 'gemini-3.1-flash-lite'
-        schema: A Pydantic BaseModel of the return format you require. 
+        schema: A Pydantic BaseModel of the return format you require.
         temperature: Temperature of the llm. Defaults to 1.0 (The same as LangChain).
 
     Returns:

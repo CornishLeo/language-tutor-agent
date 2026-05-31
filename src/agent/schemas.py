@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 
+
 class GrammarCriticSchema(BaseModel):
     is_correct: bool = Field(
         description="A boolean value representing whether the users input is correct or not."
