@@ -29,7 +29,7 @@ uv run pre-commit install
 ### 4. Run the Agent
 Launch the main application interface locally within your isolated environment:
 ```bash
-uv run python -m src.main
+uv run src/language_tutor/main.py
 ```
 
 ## AI Usage
