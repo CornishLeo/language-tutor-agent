@@ -1,4 +1,4 @@
-# japanese-tutor-rag-agent
+# language-tutor-agent
 
 ## Overview
 
