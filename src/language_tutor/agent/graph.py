@@ -1,7 +1,7 @@
 from langgraph.graph import StateGraph, START
 
-from src.agent.nodes import call_grammar_critic, call_japanese_tutor
-from src.agent.state import AgentState
+from language_tutor.agent.nodes import call_grammar_critic, call_japanese_tutor
+from language_tutor.agent.state import AgentState
 
 # Initialise graph
 workflow = StateGraph(AgentState)
