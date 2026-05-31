@@ -12,3 +12,8 @@ dependencies = [
     "pytest>=9.0.3",
     "python-dotenv>=1.2.2",
 ]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.0",
+]
