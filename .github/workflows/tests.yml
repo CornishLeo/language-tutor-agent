@@ -29,6 +29,8 @@ jobs:
 
       # Check formatting/linting using pre-commit hooks
       - name: Run Pre-Commit Checks
+        env:
+          SKIP: no-commit-to-branch
         run: uv run pre-commit run --all-files
 
       # Run Unit Tests (Only unit tests for now because it is free)
