@@ -1,0 +1,36 @@
+name: Code Quality & Testing
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Run Test Suite
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Install `uv` package manager
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true # Caches dependencies to make future runs fast
+          version: "latest"
+
+      # Sync dependencies to environment.
+      - name: Install Dependencies
+        run: uv sync
+
+      # Check formatting/linting using pre-commit hooks
+      - name: Run Pre-Commit Checks
+        run: uv run pre-commit run --all-files
+
+      # Run Unit Tests (Only unit tests for now because it is free)
+      - name: Run Local Unit Tests
+        run: uv run pytest

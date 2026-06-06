@@ -26,7 +26,7 @@ def call_japanese_tutor(state: AgentState, runtime: Runtime[AgentContext] = None
 
     llm = get_llm(model_name=model_name, temperature=temperature)
 
-    response: GrammarCriticSchema = llm.invoke(
+    response: AIMessage = llm.invoke(
         [
             SystemMessage(prompt),
             *state["chat_history"],
